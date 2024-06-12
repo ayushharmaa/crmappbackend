@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CRM APP</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/Backend/public/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h3>All Customers</h3>
+       <form method="GET" action="/customers/new">
+        <button>New Customer +</button>
+       </form><br/>
+       <input placeholder="Credentials" name="name"><br/><br/>
+       
+     </form>
+
+
+
+        <% for(let customer of customers){ %>
+            <div class="customer"><br/>
+                <p>name: <%=customer.name %></p>
+                <p>email: <%=customer.email %></p>
+                <p>phone: <%=customer.phone %></p>
+                <p>total_spends: <%=customer.total_spends %></p>
+                <p>last_visit: <%=customer.last_visit %></p>
+                <div class="total_visits"><p>total_visits: <%=customer.visit_count %></p></div>
+                <br/>
+            </div>
+        <% } %>
+
+    
+    </body>
+</html>
